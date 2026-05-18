@@ -1,4 +1,5 @@
-﻿using Code.Logic;
+﻿using Code.Infrastructure.Factory;
+using Code.Logic;
 using UnityEngine;
 
 namespace Code.Infrastructure
@@ -6,12 +7,11 @@ namespace Code.Infrastructure
     public class LoadLevelState : IPayloadedState<string>
     {
         private const string InitialPointTag = "InitialPoint";
-        private const string HeroPath = "Hero/hero";
-        private const string HudPath = "Hud/Hud";
 
         private readonly GameStateMachine _stateMachine;
         private readonly SceneLoader _sceneLoader;
         private readonly LoadingCurtain _curtain;
+        private readonly IGameFactory _gameFactory;
 
         public LoadLevelState(GameStateMachine stateMachine, SceneLoader sceneLoader, LoadingCurtain curtain)
         {
@@ -20,34 +20,21 @@ namespace Code.Infrastructure
             _curtain = curtain;
         }
 
+        public void Exit() => 
+            _curtain.Hide();
+
         public void Enter(string sceneName)
         {
             _curtain.Show();
             _sceneLoader.Load(sceneName, OnLoaded);
         }
 
-        public void Exit() => 
-            _curtain.Hide();
-
         private void OnLoaded()
         {
-            GameObject initialPoint = GameObject.FindWithTag(InitialPointTag);
-            
-            Instantiate(HeroPath, initialPoint.transform.position);
-            Instantiate(HudPath);
+            _gameFactory.CreateHero(at: GameObject.FindWithTag(InitialPointTag));
+            _gameFactory.CreateHud();
             
             _stateMachine.Enter<GameLoopState>();
-        }
-
-        private static GameObject Instantiate(string path)
-        {
-            var prefab = Resources.Load<GameObject>(path);
-            return Object.Instantiate(prefab);
-        }
-        private static GameObject Instantiate(string path, Vector3 at)
-        {
-            var prefab = Resources.Load<GameObject>(path);
-            return Object.Instantiate(prefab, at, Quaternion.identity);
         }
     }
 }
