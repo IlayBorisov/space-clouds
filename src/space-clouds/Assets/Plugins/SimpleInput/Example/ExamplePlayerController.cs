@@ -1,47 +1,50 @@
 ﻿using UnityEngine;
 
-public class ExamplePlayerController : MonoBehaviour
+namespace Plugins.SimpleInput.Example
 {
-	public Color materialColor;
-	private Rigidbody m_rigidbody;
-
-	public string horizontalAxis = "Horizontal";
-	public string verticalAxis = "Vertical";
-	public string jumpButton = "Jump";
-
-	private float inputHorizontal;
-	private float inputVertical;
-
-	void Awake()
+	public class ExamplePlayerController : MonoBehaviour
 	{
-		GetComponent<Renderer>().material.color = materialColor;
-		m_rigidbody = GetComponent<Rigidbody>();
-	}
+		public Color materialColor;
+		private Rigidbody m_rigidbody;
 
-	void Update()
-	{
-		inputHorizontal = SimpleInput.GetAxis( horizontalAxis );
-		inputVertical = SimpleInput.GetAxis( verticalAxis );
+		public string horizontalAxis = "Horizontal";
+		public string verticalAxis = "Vertical";
+		public string jumpButton = "Jump";
 
-		transform.Rotate( 0f, inputHorizontal * 5f, 0f, Space.World );
+		private float inputHorizontal;
+		private float inputVertical;
 
-		if( SimpleInput.GetButtonDown( jumpButton ) && IsGrounded() )
-			m_rigidbody.AddForce( 0f, 10f, 0f, ForceMode.Impulse );
-	}
+		void Awake()
+		{
+			GetComponent<Renderer>().material.color = materialColor;
+			m_rigidbody = GetComponent<Rigidbody>();
+		}
 
-	void FixedUpdate()
-	{
-		m_rigidbody.AddRelativeForce( new Vector3( 0f, 0f, inputVertical ) * 20f );
-	}
+		void Update()
+		{
+			inputHorizontal = Scripts.SimpleInput.GetAxis( horizontalAxis );
+			inputVertical = Scripts.SimpleInput.GetAxis( verticalAxis );
 
-	void OnCollisionEnter( Collision collision )
-	{
-		if( collision.gameObject.CompareTag( "Player" ) )
-			m_rigidbody.AddForce( collision.contacts[0].normal * 10f, ForceMode.Impulse );
-	}
+			transform.Rotate( 0f, inputHorizontal * 5f, 0f, Space.World );
 
-	bool IsGrounded()
-	{
-		return Physics.Raycast( transform.position, Vector3.down, 1.75f );
+			if( Scripts.SimpleInput.GetButtonDown( jumpButton ) && IsGrounded() )
+				m_rigidbody.AddForce( 0f, 10f, 0f, ForceMode.Impulse );
+		}
+
+		void FixedUpdate()
+		{
+			m_rigidbody.AddRelativeForce( new Vector3( 0f, 0f, inputVertical ) * 20f );
+		}
+
+		void OnCollisionEnter( Collision collision )
+		{
+			if( collision.gameObject.CompareTag( "Player" ) )
+				m_rigidbody.AddForce( collision.contacts[0].normal * 10f, ForceMode.Impulse );
+		}
+
+		bool IsGrounded()
+		{
+			return Physics.Raycast( transform.position, Vector3.down, 1.75f );
+		}
 	}
 }

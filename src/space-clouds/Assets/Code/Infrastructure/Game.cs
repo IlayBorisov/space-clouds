@@ -1,4 +1,5 @@
 ﻿using System.Net.Mime;
+using Code.Logic;
 using Code.Services.Input;
 using UnityEngine;
 
@@ -7,18 +8,20 @@ namespace Code.Infrastructure
     public class Game
     {
         public static IInputService InputService;
-
-        public Game()
+        public GameStateMachine StateMachine;
+        
+        public Game(ICoroutineRunner coroutineRunner, LoadingCurtain curtain)
         {
-            RegisterInputService();
+            StateMachine = new GameStateMachine(new SceneLoader(coroutineRunner), curtain);
+            RegisterInput();
         }
-
-        private static void RegisterInputService()
+        
+        private static void RegisterInput()
         {
             if (Application.isEditor)
                 InputService = new StandaloneInputService();
             else
-                InputService = new MoBileInputService();
+                InputService = new MobileInputService();
         }
     }
 }

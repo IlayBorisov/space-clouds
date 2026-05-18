@@ -1,5 +1,5 @@
-﻿using Entitas;
-using Code.Gameplay.Common.Time;
+﻿using Code.Time;
+using Entitas;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Movement.Systems

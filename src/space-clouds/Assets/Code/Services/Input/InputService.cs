@@ -1,4 +1,5 @@
-﻿using UnityEditor.Searcher;
+﻿using Plugins.SimpleInput.Scripts;
+using UnityEditor.Searcher;
 using UnityEngine;
 
 namespace Code.Services.Input
