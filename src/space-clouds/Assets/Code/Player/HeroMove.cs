@@ -14,7 +14,7 @@ namespace Code.Player
 
         private void Awake()
         {
-            _inputService = AllServices.Container.Single<InputService>();
+            _inputService = AllServices.Container.Single<IInputService>();
         }
 
         private void Update()
