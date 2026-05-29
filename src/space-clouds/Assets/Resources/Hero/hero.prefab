@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4756721616934274772}
-  - component: {fileID: 5456556110250455564}
   - component: {fileID: 1190231799623108070}
+  - component: {fileID: 2634104686832109510}
   m_Layer: 0
   m_Name: hero
   m_TagString: Untagged
@@ -34,20 +34,6 @@ Transform:
   - {fileID: 6089627591142264448}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5456556110250455564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5794851105831342790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6847c706f4a46f94884b83d3cfc15785, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  Rigidbody2D: {fileID: 1190231799623108070}
-  MovementSpeed: 4
 --- !u!50 &1190231799623108070
 Rigidbody2D:
   serializedVersion: 5
@@ -75,6 +61,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2634104686832109510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5794851105831342790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b5da75851de4a6c8d608002cb6743e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Code.Gameplay.Features.Hero.Registrars.HeroRegistrar
+  Speed: 2
 --- !u!1 &6982514456495148674
 GameObject:
   m_ObjectHideFlags: 0

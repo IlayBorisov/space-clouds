@@ -1,4 +1,4 @@
-﻿using Code.Time;
+﻿using Code.Common.Time;
 using Entitas;
 using UnityEngine;
 
@@ -16,7 +16,8 @@ namespace Code.Gameplay.Features.Movement.Systems
                 .AllOf(
                     GameMatcher.WorldPosition, 
                     GameMatcher.Direction,
-                    GameMatcher.Speed));
+                    GameMatcher.Speed,
+                    GameMatcher.Moving));
         }
 
         public void Execute()
