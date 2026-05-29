@@ -1,4 +1,6 @@
-﻿using Code.Infrastructure.AssetManagement;
+﻿using Code.Gameplay.Common.Entity;
+using Code.Gameplay.Common.Extensions;
+using Code.Infrastructure.AssetManagement;
 using UnityEngine;
 
 namespace Code.Infrastructure.Factory
@@ -17,5 +19,11 @@ namespace Code.Infrastructure.Factory
 
         public void CreateHud() =>
             _assets.Instantiate(AssetPath.HudPath);
+
+        public void CreateCloudSpawner() =>
+            CreateEntity.Empty()
+                .With(x => x.isCloudSpawner = true)
+                .AddSpawnInternal(2f)
+                .AddSpawnTimer(0f);
     }
 }

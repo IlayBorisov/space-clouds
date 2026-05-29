@@ -6,47 +6,59 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Gameplay.Common.Components;
-using Code.Gameplay.Features.Hero.Components;
-using Code.Gameplay.Features.Movement.Components;
-using Code.Gameplay.Input.Components;
-
 public static class GameComponentsLookup {
 
     public const int Id = 0;
     public const int Transform = 1;
     public const int WorldPosition = 2;
-    public const int Hero = 3;
-    public const int Direction = 4;
-    public const int Moving = 5;
-    public const int Speed = 6;
-    public const int AxisInput = 7;
-    public const int Input = 8;
+    public const int Cloud = 3;
+    public const int CloudSpawner = 4;
+    public const int DestroyedBelowScreen = 5;
+    public const int Destructed = 6;
+    public const int SpawnInternal = 7;
+    public const int SpawnTimer = 8;
+    public const int Hero = 9;
+    public const int AxisInput = 10;
+    public const int Input = 11;
+    public const int Direction = 12;
+    public const int Moving = 13;
+    public const int Speed = 14;
 
-    public const int TotalComponents = 9;
+    public const int TotalComponents = 15;
 
     public static readonly string[] componentNames = {
         "Id",
         "Transform",
         "WorldPosition",
+        "Cloud",
+        "CloudSpawner",
+        "DestroyedBelowScreen",
+        "Destructed",
+        "SpawnInternal",
+        "SpawnTimer",
         "Hero",
+        "AxisInput",
+        "Input",
         "Direction",
         "Moving",
-        "Speed",
-        "AxisInput",
-        "Input"
+        "Speed"
     };
 
     public static readonly System.Type[] componentTypes = {
-        typeof(Id),
-        typeof(TransformComponent),
-        typeof(WorldPosition),
-        typeof(Hero),
-        typeof(Direction),
-        typeof(Moving),
-        typeof(Speed),
-        typeof(AxisInput),
-        typeof(Input)
+        typeof(Code.Gameplay.Common.Components.Id),
+        typeof(Code.Gameplay.Common.Components.TransformComponent),
+        typeof(Code.Gameplay.Common.Components.WorldPosition),
+        typeof(Code.Gameplay.Features.Clouds.Components.Cloud),
+        typeof(Code.Gameplay.Features.Clouds.Components.CloudSpawner),
+        typeof(Code.Gameplay.Features.Clouds.Components.DestroyedBelowScreen),
+        typeof(Code.Gameplay.Features.Clouds.Components.Destructed),
+        typeof(Code.Gameplay.Features.Clouds.Components.SpawnInternal),
+        typeof(Code.Gameplay.Features.Clouds.Components.SpawnTimer),
+        typeof(Code.Gameplay.Features.Hero.Components.Hero),
+        typeof(Code.Gameplay.Features.Input.Components.AxisInput),
+        typeof(Code.Gameplay.Features.Input.Components.Input),
+        typeof(Code.Gameplay.Features.Movement.Components.Direction),
+        typeof(Code.Gameplay.Features.Movement.Components.Moving),
+        typeof(Code.Gameplay.Features.Movement.Components.Speed)
     };
 }

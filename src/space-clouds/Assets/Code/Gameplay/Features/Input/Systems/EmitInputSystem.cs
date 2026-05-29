@@ -1,9 +1,7 @@
-﻿using Code.Gameplay.Input.Service;
-using Code.Infrastructure;
+﻿using Code.Gameplay.Features.Input.Service;
 using Entitas;
-using UnityEngine;
 
-namespace Code.Gameplay.Input.Systems
+namespace Code.Gameplay.Features.Input.Systems
 {
     public class EmitInputSystem : IExecuteSystem
     {

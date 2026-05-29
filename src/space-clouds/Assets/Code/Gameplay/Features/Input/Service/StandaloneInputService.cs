@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using UnityEngine.EventSystems;
 
-namespace Code.Gameplay.Input.Service
+namespace Code.Gameplay.Features.Input.Service
 {
     public class StandaloneInputService : InputService
     {

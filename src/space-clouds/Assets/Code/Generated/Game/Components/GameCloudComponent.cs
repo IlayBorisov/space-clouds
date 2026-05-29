@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherMoving;
+    static Entitas.IMatcher<GameEntity> _matcherCloud;
 
-    public static Entitas.IMatcher<GameEntity> Moving {
+    public static Entitas.IMatcher<GameEntity> Cloud {
         get {
-            if (_matcherMoving == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Moving);
+            if (_matcherCloud == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Cloud);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherMoving = matcher;
+                _matcherCloud = matcher;
             }
 
-            return _matcherMoving;
+            return _matcherCloud;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Movement.Components.Moving movingComponent = new Code.Gameplay.Features.Movement.Components.Moving();
+    static readonly Code.Gameplay.Features.Clouds.Components.Cloud cloudComponent = new Code.Gameplay.Features.Clouds.Components.Cloud();
 
-    public bool isMoving {
-        get { return HasComponent(GameComponentsLookup.Moving); }
+    public bool isCloud {
+        get { return HasComponent(GameComponentsLookup.Cloud); }
         set {
-            if (value != isMoving) {
-                var index = GameComponentsLookup.Moving;
+            if (value != isCloud) {
+                var index = GameComponentsLookup.Cloud;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : movingComponent;
+                            : cloudComponent;
 
                     AddComponent(index, component);
                 } else {

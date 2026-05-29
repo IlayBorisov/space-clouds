@@ -1,4 +1,6 @@
-﻿using Code.Common.Time;
+﻿using Code.Common.Cameras;
+using Code.Common.Time;
+using Code.Gameplay.Features.Clouds.Service;
 using Code.Infrastructure.AssetManagement;
 using Code.Infrastructure.Factory;
 using Code.Infrastructure.Runner;
@@ -11,8 +13,6 @@ namespace Code.Infrastructure.Installers
 {
     public class ProjectInstaller : MonoInstaller
     {
-        public LoadingCurtain CurtainPrefab;
-
         public override void InstallBindings()
         {
             BindInfrastructure();
@@ -22,20 +22,17 @@ namespace Code.Infrastructure.Installers
 
         private void BindInfrastructure()
         {
-            // ECS
             Contexts contexts = Contexts.sharedInstance;
             Container.Bind<Contexts>().FromInstance(contexts).AsSingle();
             Container.Bind<GameContext>().FromInstance(contexts.game).AsSingle();
-
-            // Time
+            
             Container.Bind<ITimeService>().To<UnityTimeService>().AsSingle();
-
-            // Curtain — грузим через Resources
+            
             Container.Bind<LoadingCurtain>()
                 .FromComponentInNewPrefab(Resources.Load<LoadingCurtain>("Infastructure/Curtain"))
                 .AsSingle()
                 .NonLazy();
-
+            
             Container.Bind<ICoroutineRunner>()
                 .To<CoroutineRunner>()
                 .FromNewComponentOnNewGameObject()
@@ -48,7 +45,6 @@ namespace Code.Infrastructure.Installers
 
         private void BindStateMachine()
         {
-            // Каждое состояние — отдельный синглтон
             Container.Bind<BootstrapState>().AsSingle();
             Container.Bind<LoadLevelState>().AsSingle();
             Container.Bind<GameLoopState>().AsSingle();
@@ -60,6 +56,8 @@ namespace Code.Infrastructure.Installers
         {
             Container.Bind<IAssets>().To<AssetProvider>().AsSingle();
             Container.Bind<IGameFactory>().To<GameFactory>().AsSingle();
+            Container.Bind<ICameraProvider>().To<CameraProvider>().AsSingle();
+            Container.Bind<ICloudSpawnService>().To<CloudSpawnService>().AsSingle();
         }
     }
 }

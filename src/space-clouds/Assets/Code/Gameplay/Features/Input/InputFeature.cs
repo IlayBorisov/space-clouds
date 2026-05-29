@@ -1,7 +1,7 @@
-﻿using Code.Gameplay.Input.Service;
-using Code.Gameplay.Input.Systems;
+﻿using Code.Gameplay.Features.Input.Service;
+using Code.Gameplay.Features.Input.Systems;
 
-namespace Code.Gameplay.Input
+namespace Code.Gameplay.Features.Input
 {
     public class InputFeature : Feature
     {

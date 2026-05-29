@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Gameplay.Input.Components;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherAxisInput;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public AxisInput axisInput { get { return (AxisInput)GetComponent(GameComponentsLookup.AxisInput); } }
+    public Code.Gameplay.Features.Input.Components.AxisInput axisInput { get { return (Code.Gameplay.Features.Input.Components.AxisInput)GetComponent(GameComponentsLookup.AxisInput); } }
     public UnityEngine.Vector2 AxisInput { get { return axisInput.Value; } }
     public bool hasAxisInput { get { return HasComponent(GameComponentsLookup.AxisInput); } }
 
     public GameEntity AddAxisInput(UnityEngine.Vector2 newValue) {
         var index = GameComponentsLookup.AxisInput;
-        var component = (AxisInput)CreateComponent(index, typeof(AxisInput));
+        var component = (Code.Gameplay.Features.Input.Components.AxisInput)CreateComponent(index, typeof(Code.Gameplay.Features.Input.Components.AxisInput));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceAxisInput(UnityEngine.Vector2 newValue) {
         var index = GameComponentsLookup.AxisInput;
-        var component = (AxisInput)CreateComponent(index, typeof(AxisInput));
+        var component = (Code.Gameplay.Features.Input.Components.AxisInput)CreateComponent(index, typeof(Code.Gameplay.Features.Input.Components.AxisInput));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

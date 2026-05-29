@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherMoving;
+    static Entitas.IMatcher<GameEntity> _matcherDestroyedBelowScreen;
 
-    public static Entitas.IMatcher<GameEntity> Moving {
+    public static Entitas.IMatcher<GameEntity> DestroyedBelowScreen {
         get {
-            if (_matcherMoving == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Moving);
+            if (_matcherDestroyedBelowScreen == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.DestroyedBelowScreen);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherMoving = matcher;
+                _matcherDestroyedBelowScreen = matcher;
             }
 
-            return _matcherMoving;
+            return _matcherDestroyedBelowScreen;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Movement.Components.Moving movingComponent = new Code.Gameplay.Features.Movement.Components.Moving();
+    static readonly Code.Gameplay.Features.Clouds.Components.DestroyedBelowScreen destroyedBelowScreenComponent = new Code.Gameplay.Features.Clouds.Components.DestroyedBelowScreen();
 
-    public bool isMoving {
-        get { return HasComponent(GameComponentsLookup.Moving); }
+    public bool isDestroyedBelowScreen {
+        get { return HasComponent(GameComponentsLookup.DestroyedBelowScreen); }
         set {
-            if (value != isMoving) {
-                var index = GameComponentsLookup.Moving;
+            if (value != isDestroyedBelowScreen) {
+                var index = GameComponentsLookup.DestroyedBelowScreen;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : movingComponent;
+                            : destroyedBelowScreenComponent;
 
                     AddComponent(index, component);
                 } else {

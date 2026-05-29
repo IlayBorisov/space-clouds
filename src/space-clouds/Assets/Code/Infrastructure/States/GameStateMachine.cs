@@ -21,8 +21,7 @@ namespace Code.Infrastructure.States
                 [typeof(LoadLevelState)] = loadLevelState,
                 [typeof(GameLoopState)] = gameLoopState,
             };
-
-            // Передаём себя в состояния после создания — без circular dependency
+            
             bootstrapState.Initialize(this);
             loadLevelState.Initialize(this);
         }

@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Gameplay.Input.Components;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherInput;
@@ -36,7 +33,7 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Input inputComponent = new Input();
+    static readonly Code.Gameplay.Features.Input.Components.Input inputComponent = new Code.Gameplay.Features.Input.Components.Input();
 
     public bool isInput {
         get { return HasComponent(GameComponentsLookup.Input); }
