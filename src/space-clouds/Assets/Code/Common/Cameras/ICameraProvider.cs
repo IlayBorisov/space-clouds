@@ -7,6 +7,7 @@ namespace Code.Common.Cameras
         Camera MainCamera { get; }
         float WorldScreenHeight { get; }
         float WorldScreenWidth { get; }
+        float WorldScreenBottom { get; }
         void SetMainCamera(Camera camera);
     }
 }

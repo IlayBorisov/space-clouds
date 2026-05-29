@@ -22,9 +22,9 @@ namespace Code.Gameplay.Features.Clouds.Systems
         {
             foreach (GameEntity cloud in _clouds)
             {
-                if (cloud.WorldPosition.y < _cameraProvider.WorldScreenHeight/ 2f-1f)
+                if (cloud.WorldPosition.y < _cameraProvider.WorldScreenBottom && !cloud.hasDestroyRequest)
                 {
-                    cloud.isDestructed = true;
+                    cloud.AddDestroyRequest(true);
                 }
             }
         }

@@ -7,6 +7,7 @@ namespace Code.Common.Cameras
         public Camera MainCamera { get; private set; }
         public float WorldScreenHeight { get; private set; }
         public float WorldScreenWidth { get; private set; }
+        public float WorldScreenBottom { get; private set; }
 
         public void SetMainCamera(Camera camera)
         {
@@ -20,6 +21,7 @@ namespace Code.Common.Cameras
             Vector2 topRight = MainCamera.ViewportToWorldPoint(new Vector3(1, 1, MainCamera.nearClipPlane));
             WorldScreenWidth = topRight.x - bottomLeft.x;
             WorldScreenHeight = topRight.y - bottomLeft.y;
+            WorldScreenBottom = bottomLeft.y;
         }
     }
 }

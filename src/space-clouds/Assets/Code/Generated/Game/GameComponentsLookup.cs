@@ -14,7 +14,7 @@ public static class GameComponentsLookup {
     public const int Cloud = 3;
     public const int CloudSpawner = 4;
     public const int DestroyedBelowScreen = 5;
-    public const int Destructed = 6;
+    public const int DestroyRequest = 6;
     public const int SpawnInternal = 7;
     public const int SpawnTimer = 8;
     public const int Hero = 9;
@@ -33,7 +33,7 @@ public static class GameComponentsLookup {
         "Cloud",
         "CloudSpawner",
         "DestroyedBelowScreen",
-        "Destructed",
+        "DestroyRequest",
         "SpawnInternal",
         "SpawnTimer",
         "Hero",
@@ -51,7 +51,7 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Clouds.Components.Cloud),
         typeof(Code.Gameplay.Features.Clouds.Components.CloudSpawner),
         typeof(Code.Gameplay.Features.Clouds.Components.DestroyedBelowScreen),
-        typeof(Code.Gameplay.Features.Clouds.Components.Destructed),
+        typeof(Code.Gameplay.Features.DestroyFeature.Components.DestroyRequest),
         typeof(Code.Gameplay.Features.Clouds.Components.SpawnInternal),
         typeof(Code.Gameplay.Features.Clouds.Components.SpawnTimer),
         typeof(Code.Gameplay.Features.Hero.Components.Hero),

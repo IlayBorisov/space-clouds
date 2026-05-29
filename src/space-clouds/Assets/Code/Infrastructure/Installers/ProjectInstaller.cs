@@ -1,4 +1,6 @@
 ﻿using Code.Common.Cameras;
+using Code.Common.Collisions;
+using Code.Common.Physics;
 using Code.Common.Time;
 using Code.Gameplay.Features.Clouds.Service;
 using Code.Infrastructure.AssetManagement;
@@ -58,6 +60,8 @@ namespace Code.Infrastructure.Installers
             Container.Bind<IGameFactory>().To<GameFactory>().AsSingle();
             Container.Bind<ICameraProvider>().To<CameraProvider>().AsSingle();
             Container.Bind<ICloudSpawnService>().To<CloudSpawnService>().AsSingle();
+            Container.Bind<IPhysicsService>().To<PhysicsService>().AsSingle();
+            Container.Bind<ICollisionRegistry>().To<CollisionRegistry>().AsSingle();
         }
     }
 }
