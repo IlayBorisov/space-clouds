@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Gameplay.Common.Components;
-
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherWorldPosition;
@@ -36,13 +33,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public WorldPosition worldPosition { get { return (WorldPosition)GetComponent(GameComponentsLookup.WorldPosition); } }
+    public Code.Gameplay.Common.Components.WorldPosition worldPosition { get { return (Code.Gameplay.Common.Components.WorldPosition)GetComponent(GameComponentsLookup.WorldPosition); } }
     public UnityEngine.Vector3 WorldPosition { get { return worldPosition.Value; } }
     public bool hasWorldPosition { get { return HasComponent(GameComponentsLookup.WorldPosition); } }
 
     public GameEntity AddWorldPosition(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.WorldPosition;
-        var component = (WorldPosition)CreateComponent(index, typeof(WorldPosition));
+        var component = (Code.Gameplay.Common.Components.WorldPosition)CreateComponent(index, typeof(Code.Gameplay.Common.Components.WorldPosition));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -50,7 +47,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceWorldPosition(UnityEngine.Vector3 newValue) {
         var index = GameComponentsLookup.WorldPosition;
-        var component = (WorldPosition)CreateComponent(index, typeof(WorldPosition));
+        var component = (Code.Gameplay.Common.Components.WorldPosition)CreateComponent(index, typeof(Code.Gameplay.Common.Components.WorldPosition));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

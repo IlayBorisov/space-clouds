@@ -7,5 +7,6 @@ namespace Code.Infrastructure.Factory
     {
         void CreateHero(GameObject at);
         void CreateHud();
+        void CreateCloudSpawner();
     }
 }

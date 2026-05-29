@@ -1,7 +1,7 @@
 ﻿using Code.Gameplay.Common.Entity;
 using Entitas;
 
-namespace Code.Gameplay.Input.Systems
+namespace Code.Gameplay.Features.Input.Systems
 {
     public class InitializeInputSystem : IInitializeSystem
     {

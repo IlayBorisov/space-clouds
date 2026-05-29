@@ -8,17 +8,17 @@
 //------------------------------------------------------------------------------
 public sealed partial class GameMatcher {
 
-    static Entitas.IMatcher<GameEntity> _matcherMoving;
+    static Entitas.IMatcher<GameEntity> _matcherCloudSpawner;
 
-    public static Entitas.IMatcher<GameEntity> Moving {
+    public static Entitas.IMatcher<GameEntity> CloudSpawner {
         get {
-            if (_matcherMoving == null) {
-                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.Moving);
+            if (_matcherCloudSpawner == null) {
+                var matcher = (Entitas.Matcher<GameEntity>)Entitas.Matcher<GameEntity>.AllOf(GameComponentsLookup.CloudSpawner);
                 matcher.componentNames = GameComponentsLookup.componentNames;
-                _matcherMoving = matcher;
+                _matcherCloudSpawner = matcher;
             }
 
-            return _matcherMoving;
+            return _matcherCloudSpawner;
         }
     }
 }
@@ -33,18 +33,18 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    static readonly Code.Gameplay.Features.Movement.Components.Moving movingComponent = new Code.Gameplay.Features.Movement.Components.Moving();
+    static readonly Code.Gameplay.Features.Clouds.Components.CloudSpawner cloudSpawnerComponent = new Code.Gameplay.Features.Clouds.Components.CloudSpawner();
 
-    public bool isMoving {
-        get { return HasComponent(GameComponentsLookup.Moving); }
+    public bool isCloudSpawner {
+        get { return HasComponent(GameComponentsLookup.CloudSpawner); }
         set {
-            if (value != isMoving) {
-                var index = GameComponentsLookup.Moving;
+            if (value != isCloudSpawner) {
+                var index = GameComponentsLookup.CloudSpawner;
                 if (value) {
                     var componentPool = GetComponentPool(index);
                     var component = componentPool.Count > 0
                             ? componentPool.Pop()
-                            : movingComponent;
+                            : cloudSpawnerComponent;
 
                     AddComponent(index, component);
                 } else {

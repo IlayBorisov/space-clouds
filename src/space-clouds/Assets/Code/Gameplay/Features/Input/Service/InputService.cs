@@ -1,7 +1,7 @@
 ﻿using Plugins.SimpleInput.Scripts;
 using UnityEngine;
 
-namespace Code.Gameplay.Input.Service
+namespace Code.Gameplay.Features.Input.Service
 {
     public abstract class InputService : IInputService
     {
