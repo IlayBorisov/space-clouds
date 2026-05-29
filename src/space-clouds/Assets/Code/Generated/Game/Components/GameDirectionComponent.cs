@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.Movement.Components;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherDirection;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Movement.Direction direction { get { return (Code.Gameplay.Features.Movement.Direction)GetComponent(GameComponentsLookup.Direction); } }
+    public Direction direction { get { return (Direction)GetComponent(GameComponentsLookup.Direction); } }
     public UnityEngine.Vector2 Direction { get { return direction.Value; } }
     public bool hasDirection { get { return HasComponent(GameComponentsLookup.Direction); } }
 
     public GameEntity AddDirection(UnityEngine.Vector2 newValue) {
         var index = GameComponentsLookup.Direction;
-        var component = (Code.Gameplay.Features.Movement.Direction)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.Direction));
+        var component = (Direction)CreateComponent(index, typeof(Direction));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceDirection(UnityEngine.Vector2 newValue) {
         var index = GameComponentsLookup.Direction;
-        var component = (Code.Gameplay.Features.Movement.Direction)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.Direction));
+        var component = (Direction)CreateComponent(index, typeof(Direction));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

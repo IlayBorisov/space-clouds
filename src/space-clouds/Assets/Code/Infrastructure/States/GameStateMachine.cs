@@ -1,32 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
-using Code.Infrastructure.Factory;
-using Code.Infrastructure.Services;
-using Code.Logic;
+using Zenject;
 
 namespace Code.Infrastructure.States
 {
-    public class GameStateMachine
+    public class GameStateMachine : IGameStateMachine
     {
         private readonly Dictionary<Type, IExitableState> _states;
         private IExitableState _activeState;
 
-        public GameStateMachine(SceneLoader sceneLoader, LoadingCurtain curtain, AllServices services)
+        [Inject]
+        public GameStateMachine(
+            BootstrapState bootstrapState,
+            LoadLevelState loadLevelState,
+            GameLoopState gameLoopState)
         {
             _states = new Dictionary<Type, IExitableState>
             {
-                [typeof(BootstrapState)] = new BootstrapState(this, sceneLoader, services),
-                [typeof(LoadLevelState)] = new LoadLevelState(this, sceneLoader, curtain, services.Single<IGameFactory>()),
-                [typeof(GameLoopState)] = new GameLoopState(this),
+                [typeof(BootstrapState)] = bootstrapState,
+                [typeof(LoadLevelState)] = loadLevelState,
+                [typeof(GameLoopState)] = gameLoopState,
             };
+
+            // Передаём себя в состояния после создания — без circular dependency
+            bootstrapState.Initialize(this);
+            loadLevelState.Initialize(this);
         }
+
         public void Enter<TState>() where TState : class, IState
         {
             IState state = ChangeState<TState>();
             state.Enter();
         }
 
-        public void Enter<TState, Tpayload>(Tpayload payload) where TState : class, IPayloadedState<Tpayload>
+        public void Enter<TState, TPayload>(TPayload payload)
+            where TState : class, IPayloadedState<TPayload>
         {
             TState state = ChangeState<TState>();
             state.Enter(payload);
@@ -35,14 +43,12 @@ namespace Code.Infrastructure.States
         private TState ChangeState<TState>() where TState : class, IExitableState
         {
             _activeState?.Exit();
-            
             TState state = GetState<TState>();
             _activeState = state;
-            
             return state;
         }
 
-        private TState GetState<TState>() where TState : class, IExitableState => 
+        private TState GetState<TState>() where TState : class, IExitableState =>
             _states[typeof(TState)] as TState;
     }
 }

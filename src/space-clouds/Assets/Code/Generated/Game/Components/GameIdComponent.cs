@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Common.Components;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherId;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Common.Id id { get { return (Code.Gameplay.Common.Id)GetComponent(GameComponentsLookup.Id); } }
+    public Id id { get { return (Id)GetComponent(GameComponentsLookup.Id); } }
     public int Id { get { return id.Value; } }
     public bool hasId { get { return HasComponent(GameComponentsLookup.Id); } }
 
     public GameEntity AddId(int newValue) {
         var index = GameComponentsLookup.Id;
-        var component = (Code.Gameplay.Common.Id)CreateComponent(index, typeof(Code.Gameplay.Common.Id));
+        var component = (Id)CreateComponent(index, typeof(Id));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceId(int newValue) {
         var index = GameComponentsLookup.Id;
-        var component = (Code.Gameplay.Common.Id)CreateComponent(index, typeof(Code.Gameplay.Common.Id));
+        var component = (Id)CreateComponent(index, typeof(Id));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;

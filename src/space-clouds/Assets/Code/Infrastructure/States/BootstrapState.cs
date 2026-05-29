@@ -1,52 +1,33 @@
-﻿using Code.Infrastructure.AssetManagement;
-using Code.Infrastructure.Factory;
-using Code.Infrastructure.Services;
-using Code.Services.Input;
-using UnityEngine;
+﻿using Code.Infrastructure.Runner;
+using Zenject;
 
 namespace Code.Infrastructure.States
 {
     public class BootstrapState : IState
     {
         private const string Initial = "Initial";
-        private readonly GameStateMachine _stateMachine;
+        private const string MainScene = "Main";
+
         private readonly SceneLoader _sceneLoader;
-        private readonly AllServices _services;
+        private IGameStateMachine _stateMachine;
 
-        public BootstrapState(GameStateMachine stateMachine, SceneLoader sceneLoader, AllServices services)
+        [Inject]
+        public BootstrapState(SceneLoader sceneLoader)
         {
-            _stateMachine = stateMachine;
             _sceneLoader = sceneLoader;
-            _services = services;
-            
-            RegisterServices();
         }
 
-        public void Enter()
-        {
+        public void Initialize(IGameStateMachine stateMachine) =>
+            _stateMachine = stateMachine;
+
+        public void Enter() =>
             _sceneLoader.Load(Initial, onLoader: EnterLoadLevel);
-        }
 
-        public void Exit()
+        public void Exit() { }
+
+        private void EnterLoadLevel()
         {
-        }
-
-        private void EnterLoadLevel() => 
-            _stateMachine.Enter<LoadLevelState, string>("Main");
-
-        private void RegisterServices()
-        {
-            _services.RegisterSingle<IInputService>(InputService());
-            _services.RegisterSingle<IAssets>(new AssetProvider());
-            _services.RegisterSingle<IGameFactory>(new GameFactory(_services.Single<IAssets>()));
-        }
-
-        private static IInputService InputService()
-        {
-            if (Application.isEditor)
-                return new StandaloneInputService();
-            else
-                return new MobileInputService();
+            _stateMachine.Enter<LoadLevelState, string>(MainScene);
         }
     }
 }

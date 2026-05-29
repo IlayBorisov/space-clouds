@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.Movement.Components;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherSpeed;
@@ -33,13 +36,13 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.Movement.Speed speed { get { return (Code.Gameplay.Features.Movement.Speed)GetComponent(GameComponentsLookup.Speed); } }
+    public Speed speed { get { return (Speed)GetComponent(GameComponentsLookup.Speed); } }
     public float Speed { get { return speed.Value; } }
     public bool hasSpeed { get { return HasComponent(GameComponentsLookup.Speed); } }
 
     public GameEntity AddSpeed(float newValue) {
         var index = GameComponentsLookup.Speed;
-        var component = (Code.Gameplay.Features.Movement.Speed)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.Speed));
+        var component = (Speed)CreateComponent(index, typeof(Speed));
         component.Value = newValue;
         AddComponent(index, component);
         return this;
@@ -47,7 +50,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceSpeed(float newValue) {
         var index = GameComponentsLookup.Speed;
-        var component = (Code.Gameplay.Features.Movement.Speed)CreateComponent(index, typeof(Code.Gameplay.Features.Movement.Speed));
+        var component = (Speed)CreateComponent(index, typeof(Speed));
         component.Value = newValue;
         ReplaceComponent(index, component);
         return this;
