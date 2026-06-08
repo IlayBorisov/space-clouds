@@ -8,5 +8,8 @@ namespace Code.Infrastructure.Factory
         void CreateHero(GameObject at);
         void CreateHud();
         void CreateCloudSpawner();
+        void CreateStarSpawner();
+        void CreateAudioManager();
     }
+   
 }

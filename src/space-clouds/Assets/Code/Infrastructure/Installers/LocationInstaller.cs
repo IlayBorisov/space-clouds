@@ -1,5 +1,6 @@
 ﻿using Code.Gameplay.Features.Input.Service;
 using Code.Infrastructure.Runner;
+using Code.Infrastructure.Services.UI;
 using Zenject;
 
 namespace Code.Infrastructure.Installers
@@ -10,6 +11,7 @@ namespace Code.Infrastructure.Installers
         {
             BindInput();
             BindEcsRunner();
+            BindUI();
         }
 
         private void BindInput()
@@ -24,6 +26,14 @@ namespace Code.Infrastructure.Installers
         private void BindEcsRunner()
         {
             Container.Bind<EcsRunner>()
+                .FromComponentInHierarchy()
+                .AsSingle();
+        }
+        
+        private void BindUI()
+        {
+            Container.Bind<IUIService>()
+                .To<UIService>()
                 .FromComponentInHierarchy()
                 .AsSingle();
         }

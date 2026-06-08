@@ -7,4 +7,6 @@ namespace Code.Gameplay.Features.Clouds.Components
     [Game] public class SpawnInternal : IComponent { public float Value; }   
     [Game] public class SpawnTimer : IComponent { public float Value; }   
     [Game] public class DestroyedBelowScreen  : IComponent { }   
+    [Game] public class Destructed : IComponent { }
+    [Game] public class WindOffset : IComponent { public float Value; }
 }

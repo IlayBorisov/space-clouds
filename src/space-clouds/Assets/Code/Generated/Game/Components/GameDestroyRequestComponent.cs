@@ -6,6 +6,9 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
+
+using Code.Gameplay.Features.Destroy.Components;
+
 public sealed partial class GameMatcher {
 
     static Entitas.IMatcher<GameEntity> _matcherDestroyRequest;
@@ -33,12 +36,12 @@ public sealed partial class GameMatcher {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public Code.Gameplay.Features.DestroyFeature.Components.DestroyRequest destroyRequest { get { return (Code.Gameplay.Features.DestroyFeature.Components.DestroyRequest)GetComponent(GameComponentsLookup.DestroyRequest); } }
+    public DestroyRequest destroyRequest { get { return (DestroyRequest)GetComponent(GameComponentsLookup.DestroyRequest); } }
     public bool hasDestroyRequest { get { return HasComponent(GameComponentsLookup.DestroyRequest); } }
 
     public GameEntity AddDestroyRequest(bool newWithView) {
         var index = GameComponentsLookup.DestroyRequest;
-        var component = (Code.Gameplay.Features.DestroyFeature.Components.DestroyRequest)CreateComponent(index, typeof(Code.Gameplay.Features.DestroyFeature.Components.DestroyRequest));
+        var component = (DestroyRequest)CreateComponent(index, typeof(DestroyRequest));
         component.withView = newWithView;
         AddComponent(index, component);
         return this;
@@ -46,7 +49,7 @@ public partial class GameEntity {
 
     public GameEntity ReplaceDestroyRequest(bool newWithView) {
         var index = GameComponentsLookup.DestroyRequest;
-        var component = (Code.Gameplay.Features.DestroyFeature.Components.DestroyRequest)CreateComponent(index, typeof(Code.Gameplay.Features.DestroyFeature.Components.DestroyRequest));
+        var component = (DestroyRequest)CreateComponent(index, typeof(DestroyRequest));
         component.withView = newWithView;
         ReplaceComponent(index, component);
         return this;

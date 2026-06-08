@@ -1,8 +1,6 @@
 ﻿using Code.Common.Cameras;
 using Code.Infrastructure.Factory;
 using Code.Infrastructure.Runner;
-using Code.Logic;
-using Code.Logic.Curtain;
 using UnityEngine;
 using Zenject;
 
@@ -41,10 +39,13 @@ namespace Code.Infrastructure.States
         private void OnLoaded()
         {
             RegisterCamera();
-            
+
+            _gameFactory.CreateAudioManager();
             _gameFactory.CreateHero(at: GameObject.FindWithTag(InitialPointTag));
             _gameFactory.CreateHud();
             _gameFactory.CreateCloudSpawner();
+            _gameFactory.CreateStarSpawner();
+
             _stateMachine.Enter<GameLoopState>();
         }
         
