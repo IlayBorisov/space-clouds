@@ -1,14 +1,14 @@
 ﻿using Code.Common.Collisions;
 using Code.Gameplay.Features.Collisions.Systems;
-using Code.Infrastructure.Services.UI;
+using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.Collisions
 {
     public class CollisionFeature : Feature
     {
-        public CollisionFeature(GameContext gameContext, IUIService uiService)
+        public CollisionFeature(ISystemsFactory systems)
         {
-            Add(new HeroCollisionSystem(gameContext, uiService));
+            Add(systems.Create<HeroCollisionSystem>());
         }
     }
 }

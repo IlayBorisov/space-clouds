@@ -1,4 +1,6 @@
-﻿namespace Code.Infrastructure.States.Factory
+﻿using Code.Infrastructure.States.GameStates;
+
+namespace Code.Infrastructure.States.Factory
 {
     public interface IStateFactory
     {

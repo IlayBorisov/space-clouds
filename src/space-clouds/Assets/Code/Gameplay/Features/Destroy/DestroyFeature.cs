@@ -1,13 +1,15 @@
 using Code.Common.Collisions;
 using Code.Gameplay.Features.Destroy.Systems;
+using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.Destroy
 {
     public class DestroyFeature : Feature
     {
-        public DestroyFeature(GameContext gameContext, ICollisionRegistry collisionRegistry)
+        public DestroyFeature(ISystemsFactory system)
         {
-            Add(new DestroyEntitySystem(gameContext, collisionRegistry));
+            Add(system.Create<DestroyBelowScreenSystem>());
+            Add(system.Create<DestroyEntitySystem>());
         }
     }
 }

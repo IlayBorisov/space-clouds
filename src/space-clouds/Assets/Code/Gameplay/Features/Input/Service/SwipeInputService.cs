@@ -2,7 +2,7 @@
 
 namespace Code.Gameplay.Features.Input.Service
 {
-    public class SwipeInputService : InputService
+    public class SwipeInputService : IInputService
     {
         private Vector2 _startPosition;
         private Vector2 _axis;
@@ -10,8 +10,8 @@ namespace Code.Gameplay.Features.Input.Service
 
         private const float DeadZone = 10f; // пиксели, минимальное смещение
 
-        public override Vector2 Axis => _axis;
-        public override bool HasAxis => _isHolding && _axis != Vector2.zero;
+        public Vector2 Axis => _axis;
+        public bool HasAxis => _isHolding && _axis != Vector2.zero;
 
         public void Update()
         {
@@ -35,7 +35,6 @@ namespace Code.Gameplay.Features.Input.Service
                 case TouchPhase.Moved:
                 case TouchPhase.Stationary:
                     Vector2 delta = touch.position - _startPosition;
-                    Debug.Log($"Delta: {delta}, Axis: {_axis}");
                     if (delta.magnitude > DeadZone)
                         _axis = delta.normalized;
                     else

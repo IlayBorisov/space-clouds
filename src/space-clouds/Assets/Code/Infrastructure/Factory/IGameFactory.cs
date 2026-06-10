@@ -1,5 +1,4 @@
-﻿using Code.Infrastructure.Services;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Code.Infrastructure.Factory
 {
@@ -7,8 +6,6 @@ namespace Code.Infrastructure.Factory
     {
         void CreateHero(GameObject at);
         void CreateHud();
-        void CreateCloudSpawner();
-        void CreateStarSpawner();
         void CreateAudioManager();
     }
    

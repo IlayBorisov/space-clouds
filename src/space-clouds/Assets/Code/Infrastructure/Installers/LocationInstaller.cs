@@ -1,6 +1,12 @@
 ﻿using Code.Gameplay.Features.Input.Service;
+using Code.Infrastructure.Factory;
 using Code.Infrastructure.Runner;
-using Code.Infrastructure.Services.UI;
+using Code.Infrastructure.Systems;
+using Code.Infrastructure.UI;
+using Code.Infrastructure.UI.Hud;
+using Code.Infrastructure.UI.Hud.Services;
+using Code.Infrastructure.UI.Menu;
+using Code.Infrastructure.UI.Menu.Services;
 using Zenject;
 
 namespace Code.Infrastructure.Installers
@@ -12,30 +18,34 @@ namespace Code.Infrastructure.Installers
             BindInput();
             BindEcsRunner();
             BindUI();
+            BindSystems();
         }
 
         private void BindInput()
         {
-#if UNITY_EDITOR //UNITY_EDITOR UNITY_IOS
-            Container.Bind<IInputService>().To<StandaloneInputService>().AsSingle();
-#else
+#if UNITY_IOS || UNITY_ADNROID //UNITY_EDITOR UNITY_IOS
             Container.Bind<IInputService>().To<SwipeInputService>().AsSingle();
+#else //UNITY_EDITOR
+            Container.Bind<IInputService>().To<StandaloneInputService>().AsSingle();
 #endif
         }
 
         private void BindEcsRunner()
         {
-            Container.Bind<EcsRunner>()
-                .FromComponentInHierarchy()
-                .AsSingle();
+            Container.Bind<EcsRunner>().FromComponentInHierarchy().AsSingle();
+        }
+        
+        private void BindSystems()
+        {
+            Container.Bind<ISystemsFactory>().To<SystemsFactory>().AsSingle();
         }
         
         private void BindUI()
         {
-            Container.Bind<IUIService>()
-                .To<UIService>()
-                .FromComponentInHierarchy()
-                .AsSingle();
+            Container.Bind<HudView>().FromComponentInHierarchy().AsSingle();
+            Container.Bind<MenuView>().FromComponentInHierarchy().AsSingle();
+            Container.Bind<IHudService>().To<HudService>().AsSingle();
+            Container.Bind<IMenuService>().To<MenuService>().AsSingle();
         }
     }
 }

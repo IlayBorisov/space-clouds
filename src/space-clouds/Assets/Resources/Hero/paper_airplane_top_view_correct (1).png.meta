@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: cb09922db87697c44ad6db61232d8a89
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3004333843030398593
+    second: paper_airplane_top_view_correct (1)_0
+  - first:
+      213: -156436270504290515
+    second: paper_airplane_top_view_correct (1)_1
+  - first:
+      213: -4671222026558483959
+    second: paper_airplane_top_view_correct (1)_2
+  - first:
+      213: -4490301111730717805
+    second: paper_airplane_top_view_correct (1)_3
+  - first:
+      213: 2395841813396846748
+    second: paper_airplane_top_view_correct (1)_4
+  - first:
+      213: -7021685405860242554
+    second: paper_airplane_top_view_correct (1)_5
+  - first:
+      213: -710940194646504548
+    second: paper_airplane_top_view_correct (1)_6
+  - first:
+      213: -7533355885260353723
+    second: paper_airplane_top_view_correct (1)_7
+  - first:
+      213: 7057594836879322836
+    second: paper_airplane_top_view_correct (1)_8
+  - first:
+      213: 3544602876198887895
+    second: paper_airplane_top_view_correct (1)_9
+  - first:
+      213: -8860721122196869794
+    second: paper_airplane_top_view_correct (1)_10
+  - first:
+      213: 2636997330843394807
+    second: paper_airplane_top_view_correct (1)_11
+  - first:
+      213: -4365396078850402375
+    second: paper_airplane_top_view_correct (1)_12
+  - first:
+      213: 2723486641943382750
+    second: paper_airplane_top_view_correct (1)_13
+  - first:
+      213: -5963046337996470392
+    second: paper_airplane_top_view_correct (1)_14
+  - first:
+      213: 4682874347126970540
+    second: paper_airplane_top_view_correct (1)_15
+  - first:
+      213: -3906863471336291198
+    second: paper_airplane_top_view_correct (1)_16
+  - first:
+      213: -9153805800240527823
+    second: paper_airplane_top_view_correct (1)_17
+  - first:
+      213: 1035345077842339921
+    second: paper_airplane_top_view_correct (1)_18
+  - first:
+      213: -7503982975492409887
+    second: paper_airplane_top_view_correct (1)_19
+  - first:
+      213: 805138795548499003
+    second: paper_airplane_top_view_correct (1)_20
+  - first:
+      213: 1240442576855387074
+    second: paper_airplane_top_view_correct (1)_21
+  - first:
+      213: 9042438182008924631
+    second: paper_airplane_top_view_correct (1)_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: paper_airplane_top_view_correct (1)_0
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 673
+        width: 815
+        height: 910
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f792d7399467e46d0800000000000000
+      internalID: -3004333843030398593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_airplane_top_view_correct (1)_1
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 6
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d27da927a0a34ddf0800000000000000
+      internalID: -156436270504290515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_airplane_top_view_correct (1)_2
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 6
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9025008e05c7c2fb0800000000000000
+      internalID: -4671222026558483959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_airplane_top_view_correct (1)_3
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 4
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39bbfb4fdee3fa1c0800000000000000
+      internalID: -4490301111730717805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_airplane_top_view_correct (1)_4
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 6
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c98fb818f6dbf3120800000000000000
+      internalID: 2395841813396846748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_airplane_top_view_correct (1)_5
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 12
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68bd72b6356fd8e90800000000000000
+      internalID: -7021685405860242554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_airplane_top_view_correct (1)_6
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 0
+        width: 51
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9b4c81e8ab3226f0800000000000000
+      internalID: -710940194646504548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_airplane_top_view_correct (1)_7
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 12
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54f457c5cb4247790800000000000000
+      internalID: -7533355885260353723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_airplane_top_view_correct (1)_8
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 6
+        width: 36
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dea2d48c1d91f160800000000000000
+      internalID: 7057594836879322836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_airplane_top_view_correct (1)_9
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 6
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d1a9a92985f03130800000000000000
+      internalID: 3544602876198887895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_airplane_top_view_correct (1)_10
+      rect:
+        serializedVersion: 2
+        x: 994
+        y: 0
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5da7a1e515680580800000000000000
+      internalID: -8860721122196869794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_airplane_top_view_correct (1)_11
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 6
+        width: 46
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f2e29ad91f789420800000000000000
+      internalID: 2636997330843394807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_airplane_top_view_correct (1)_12
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 6
+        width: 27
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b71d38256ffa63c0800000000000000
+      internalID: -4365396078850402375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_airplane_top_view_correct (1)_13
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 6
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eda8e83dba4cbc520800000000000000
+      internalID: 2723486641943382750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_airplane_top_view_correct (1)_14
+      rect:
+        serializedVersion: 2
+        x: 1151
+        y: 1
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 887c68cf2f00f3da0800000000000000
+      internalID: -5963046337996470392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_airplane_top_view_correct (1)_15
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 6
+        width: 37
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca8da446869ecf040800000000000000
+      internalID: 4682874347126970540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_airplane_top_view_correct (1)_16
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 12
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2840d0d4f5808c9c0800000000000000
+      internalID: -3906863471336291198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_airplane_top_view_correct (1)_17
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 7
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 136c0c5af1627f080800000000000000
+      internalID: -9153805800240527823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_airplane_top_view_correct (1)_18
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 6
+        width: 15
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 158edb0ecd84e5e00800000000000000
+      internalID: 1035345077842339921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_airplane_top_view_correct (1)_19
+      rect:
+        serializedVersion: 2
+        x: 1316
+        y: 5
+        width: 37
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e53239dd3f7cd790800000000000000
+      internalID: -7503982975492409887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_airplane_top_view_correct (1)_20
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 0
+        width: 53
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3cdd8ff77d6c2b00800000000000000
+      internalID: 805138795548499003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_airplane_top_view_correct (1)_21
+      rect:
+        serializedVersion: 2
+        x: 1442
+        y: 6
+        width: 24
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2cb4cb593ffe63110800000000000000
+      internalID: 1240442576855387074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: paper_airplane_top_view_correct (1)_22
+      rect:
+        serializedVersion: 2
+        x: 1481
+        y: 11
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d9221e1e913d7d70800000000000000
+      internalID: 9042438182008924631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      paper_airplane_top_view_correct (1)_0: -3004333843030398593
+      paper_airplane_top_view_correct (1)_1: -156436270504290515
+      paper_airplane_top_view_correct (1)_10: -8860721122196869794
+      paper_airplane_top_view_correct (1)_11: 2636997330843394807
+      paper_airplane_top_view_correct (1)_12: -4365396078850402375
+      paper_airplane_top_view_correct (1)_13: 2723486641943382750
+      paper_airplane_top_view_correct (1)_14: -5963046337996470392
+      paper_airplane_top_view_correct (1)_15: 4682874347126970540
+      paper_airplane_top_view_correct (1)_16: -3906863471336291198
+      paper_airplane_top_view_correct (1)_17: -9153805800240527823
+      paper_airplane_top_view_correct (1)_18: 1035345077842339921
+      paper_airplane_top_view_correct (1)_19: -7503982975492409887
+      paper_airplane_top_view_correct (1)_2: -4671222026558483959
+      paper_airplane_top_view_correct (1)_20: 805138795548499003
+      paper_airplane_top_view_correct (1)_21: 1240442576855387074
+      paper_airplane_top_view_correct (1)_22: 9042438182008924631
+      paper_airplane_top_view_correct (1)_3: -4490301111730717805
+      paper_airplane_top_view_correct (1)_4: 2395841813396846748
+      paper_airplane_top_view_correct (1)_5: -7021685405860242554
+      paper_airplane_top_view_correct (1)_6: -710940194646504548
+      paper_airplane_top_view_correct (1)_7: -7533355885260353723
+      paper_airplane_top_view_correct (1)_8: 7057594836879322836
+      paper_airplane_top_view_correct (1)_9: 3544602876198887895
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

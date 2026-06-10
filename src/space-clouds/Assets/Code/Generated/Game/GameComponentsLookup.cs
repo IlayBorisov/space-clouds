@@ -6,41 +6,71 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using Code.Gameplay.Features.Destroy.Components;
-
 public static class GameComponentsLookup {
 
-    public const int Id = 0;
-    public const int Transform = 1;
-    public const int WorldPosition = 2;
-    public const int Cloud = 3;
-    public const int CloudSpawner = 4;
-    public const int DestroyedBelowScreen = 5;
-    public const int Destructed = 6;
-    public const int SpawnInternal = 7;
-    public const int SpawnTimer = 8;
-    public const int WindOffset = 9;
-    public const int CollectStar = 10;
-    public const int CollidedWith = 11;
-    public const int Obstacle = 12;
-    public const int DestroyRequest = 13;
-    public const int Hero = 14;
-    public const int AxisInput = 15;
-    public const int Input = 16;
-    public const int Direction = 17;
-    public const int Moving = 18;
-    public const int Speed = 19;
-    public const int Score = 20;
-    public const int Star = 21;
-    public const int StarSpawner = 22;
+    public const int GamePaused = 0;
+    public const int Id = 1;
+    public const int RestartRequest = 2;
+    public const int Transform = 3;
+    public const int WorldPosition = 4;
+    public const int BuffDuration = 5;
+    public const int TailwindActive = 6;
+    public const int TailwindBuffDuration = 7;
+    public const int TailwindPickup = 8;
+    public const int TailwindSpawner = 9;
+    public const int UmbrellaActive = 10;
+    public const int UmbrellaBuffDuration = 11;
+    public const int UmbrellaCircle = 12;
+    public const int UmbrellaPickup = 13;
+    public const int UmbrellaSpawner = 14;
+    public const int Cloud = 15;
+    public const int CloudSpawner = 16;
+    public const int DestroyedBelowScreen = 17;
+    public const int Destructed = 18;
+    public const int SpawnInternal = 19;
+    public const int SpawnTimer = 20;
+    public const int WindOffset = 21;
+    public const int CollectStar = 22;
+    public const int CollidedWith = 23;
+    public const int Obstacle = 24;
+    public const int DestroyRequest = 25;
+    public const int CollectHeart = 26;
+    public const int Heart = 27;
+    public const int HeartSpawner = 28;
+    public const int Health = 29;
+    public const int Hero = 30;
+    public const int AxisInput = 31;
+    public const int Input = 32;
+    public const int Direction = 33;
+    public const int Moving = 34;
+    public const int Speed = 35;
+    public const int Score = 36;
+    public const int Star = 37;
+    public const int StarSpawner = 38;
+    public const int WindDirection = 39;
+    public const int WindEntity = 40;
+    public const int WindForce = 41;
+    public const int WindSpeedMultiplier = 42;
+    public const int WindTimer = 43;
 
-    public const int TotalComponents = 23;
+    public const int TotalComponents = 44;
 
     public static readonly string[] componentNames = {
+        "GamePaused",
         "Id",
+        "RestartRequest",
         "Transform",
         "WorldPosition",
+        "BuffDuration",
+        "TailwindActive",
+        "TailwindBuffDuration",
+        "TailwindPickup",
+        "TailwindSpawner",
+        "UmbrellaActive",
+        "UmbrellaBuffDuration",
+        "UmbrellaCircle",
+        "UmbrellaPickup",
+        "UmbrellaSpawner",
         "Cloud",
         "CloudSpawner",
         "DestroyedBelowScreen",
@@ -52,6 +82,10 @@ public static class GameComponentsLookup {
         "CollidedWith",
         "Obstacle",
         "DestroyRequest",
+        "CollectHeart",
+        "Heart",
+        "HeartSpawner",
+        "Health",
         "Hero",
         "AxisInput",
         "Input",
@@ -60,13 +94,30 @@ public static class GameComponentsLookup {
         "Speed",
         "Score",
         "Star",
-        "StarSpawner"
+        "StarSpawner",
+        "WindDirection",
+        "WindEntity",
+        "WindForce",
+        "WindSpeedMultiplier",
+        "WindTimer"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(Code.Gameplay.Common.Components.GamePaused),
         typeof(Code.Gameplay.Common.Components.Id),
+        typeof(Code.Gameplay.Common.Components.RestartRequest),
         typeof(Code.Gameplay.Common.Components.TransformComponent),
         typeof(Code.Gameplay.Common.Components.WorldPosition),
+        typeof(Code.Gameplay.Features.Buffs.Components.BuffDuration),
+        typeof(Code.Gameplay.Features.Buffs.Tailwind.TailwindActive),
+        typeof(Code.Gameplay.Features.Buffs.Tailwind.TailwindBuffDuration),
+        typeof(Code.Gameplay.Features.Buffs.Tailwind.TailwindPickup),
+        typeof(Code.Gameplay.Features.Buffs.Tailwind.TailwindSpawner),
+        typeof(Code.Gameplay.Features.Buffs.Umbrella.UmbrellaActive),
+        typeof(Code.Gameplay.Features.Buffs.Umbrella.UmbrellaBuffDuration),
+        typeof(Code.Gameplay.Features.Buffs.Umbrella.UmbrellaCircle),
+        typeof(Code.Gameplay.Features.Buffs.Umbrella.UmbrellaPickup),
+        typeof(Code.Gameplay.Features.Buffs.Umbrella.UmbrellaSpawner),
         typeof(Code.Gameplay.Features.Clouds.Components.Cloud),
         typeof(Code.Gameplay.Features.Clouds.Components.CloudSpawner),
         typeof(Code.Gameplay.Features.Clouds.Components.DestroyedBelowScreen),
@@ -77,7 +128,11 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Collisions.Components.CollectStar),
         typeof(Code.Gameplay.Features.Collisions.Components.CollidedWith),
         typeof(Code.Gameplay.Features.Collisions.Components.Obstacle),
-        typeof(DestroyRequest),
+        typeof(Code.Gameplay.Features.Destroy.Components.DestroyRequest),
+        typeof(Code.Gameplay.Features.Hearts.CollectHeart),
+        typeof(Code.Gameplay.Features.Hearts.Heart),
+        typeof(Code.Gameplay.Features.Hearts.HeartSpawner),
+        typeof(Code.Gameplay.Features.Hero.Components.Health),
         typeof(Code.Gameplay.Features.Hero.Components.Hero),
         typeof(Code.Gameplay.Features.Input.Components.AxisInput),
         typeof(Code.Gameplay.Features.Input.Components.Input),
@@ -86,6 +141,11 @@ public static class GameComponentsLookup {
         typeof(Code.Gameplay.Features.Movement.Components.Speed),
         typeof(Code.Gameplay.Features.Stars.Components.Score),
         typeof(Code.Gameplay.Features.Stars.Components.Star),
-        typeof(Code.Gameplay.Features.Stars.Components.StarSpawner)
+        typeof(Code.Gameplay.Features.Stars.Components.StarSpawner),
+        typeof(Code.Gameplay.Features.Wind.Components.WindDirectionComponent),
+        typeof(Code.Gameplay.Features.Wind.Components.WindEntity),
+        typeof(Code.Gameplay.Features.Wind.Components.WindForce),
+        typeof(Code.Gameplay.Features.Wind.Components.WindSpeedMultiplier),
+        typeof(Code.Gameplay.Features.Wind.Components.WindTimer)
     };
 }

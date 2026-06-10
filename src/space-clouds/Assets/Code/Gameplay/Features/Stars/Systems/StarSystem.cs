@@ -1,6 +1,7 @@
 ﻿using Code.Common;
 using Code.Common.Cameras;
-using Code.Gameplay.Features.Stars.Service;
+using Code.Gameplay.Features.Stars.Configs;
+using Code.Gameplay.Features.Stars.Factory;
 using Entitas;
 using UnityEngine;
 
@@ -8,13 +9,15 @@ namespace Code.Gameplay.Features.Stars.Systems
 {
     public class StarSystem : IExecuteSystem
     {
-        private readonly IStarSpawnService _starSpawnService;
+        private readonly IStarFactory _starFactory;
         private readonly ICameraProvider _cameraProvider;
         private readonly IGroup<GameEntity> _spawners;
+        private readonly StarConfig _config;
 
-        public StarSystem(GameContext game, IStarSpawnService starSpawnService, ICameraProvider cameraProvider)
+        public StarSystem(GameContext game, IStarFactory starFactory, ICameraProvider cameraProvider, StarConfig config)
         {
-            _starSpawnService = starSpawnService;
+            _config = config;
+            _starFactory = starFactory;
             _cameraProvider = cameraProvider;
             _spawners = game.GetGroup(GameMatcher
                 .AllOf(GameMatcher.StarSpawner,
@@ -30,8 +33,8 @@ namespace Code.Gameplay.Features.Stars.Systems
                 
                 if (spawner.SpawnTimer <= 0)
                 {
-                    _starSpawnService.SpawnStar(SpawnHelper.RandomTopPosition(_cameraProvider));
-                    spawner.ReplaceSpawnTimer(spawner.SpawnInternal);
+                    _starFactory.CreateStar(SpawnHelper.RandomTopPosition(_cameraProvider));
+                    spawner.ReplaceSpawnTimer(_config.SpawnInterval);
                 }
             }
         }

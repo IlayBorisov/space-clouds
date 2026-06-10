@@ -1,6 +1,4 @@
-﻿using System.Transactions;
-using DesperateDevs.Reflection;
-using Entitas;
+﻿using Entitas;
 
 namespace Code.Gameplay.Features.Hero.Systems
 {
@@ -13,8 +11,8 @@ namespace Code.Gameplay.Features.Hero.Systems
         {
             _heroes = game.GetGroup(GameMatcher.Hero);
             _inputs = game.GetGroup(GameMatcher.Input);
-
         }
+
         public void Execute()
         {
             foreach (GameEntity input in _inputs)

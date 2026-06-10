@@ -1,4 +1,4 @@
-﻿using Code.Infrastructure.Services;
+﻿using Code.Infrastructure;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Input.Service

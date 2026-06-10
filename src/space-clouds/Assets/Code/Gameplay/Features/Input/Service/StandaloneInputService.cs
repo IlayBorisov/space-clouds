@@ -14,6 +14,5 @@ namespace Code.Gameplay.Features.Input.Service
                 return axis;
            }
         }
-
     }
 }

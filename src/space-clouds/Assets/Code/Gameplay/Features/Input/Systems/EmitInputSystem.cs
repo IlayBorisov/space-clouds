@@ -7,6 +7,7 @@ namespace Code.Gameplay.Features.Input.Systems
     {
         private readonly IInputService _inputService;
         private readonly SwipeInputService _swipeInputService;
+        
         private readonly IGroup<GameEntity> _inputs;
 
         public EmitInputSystem(GameContext game, IInputService inputService)

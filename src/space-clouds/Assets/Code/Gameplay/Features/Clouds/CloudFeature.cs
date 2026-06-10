@@ -2,16 +2,16 @@
 using Code.Gameplay.Features.Clouds.Service;
 using Code.Gameplay.Features.Clouds.Systems;
 using Code.Gameplay.Features.Wind.Service;
-using Code.Infrastructure.Factory;
+using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.Clouds
 {
     public class CloudFeature : Feature
     {
-        public CloudFeature(GameContext gameContext, ICloudSpawnService cloudSpawnService, ICameraProvider cameraProvider,IWindService windService)
+        public CloudFeature(ISystemsFactory systems)
         {
-            Add(new CloudSpawnSystem(gameContext, cloudSpawnService, cameraProvider, windService));
-            Add(new DestroyCloudBelowScreenSystem(gameContext, cameraProvider));
+            Add(systems.Create<InitializeCloudSpawnerSystem>());
+            Add(systems.Create<CloudSpawnSystem>());
         }
     }
 }

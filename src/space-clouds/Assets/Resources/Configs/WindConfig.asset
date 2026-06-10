@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365302932b5744d0bcbdbb21ee18ffd4, type: 3}
   m_Name: WindConfig
   m_EditorClassIdentifier: Assembly-CSharp::Code.Gameplay.Features.Wind.WindConfig
-  MinWindForce: -0.39
-  MaxWindForce: 2
-  MinWindDuration: 3
-  MaxWindDuration: 8
-  BaseCloudSpeed: 2
-  MinCloudSpeedMultiplier: 2
-  MaxCloudSpeedMultiplier: 2
+  MinWindForce: 0.5
+  MaxWindForce: 2.5
+  MinWindDuration: 2
+  MaxWindDuration: 6
+  BaseCloudSpeed: 2.5
+  MinCloudSpeedMultiplier: 0.8
+  MaxCloudSpeedMultiplier: 2.5
+  NoWindChance: 0.4

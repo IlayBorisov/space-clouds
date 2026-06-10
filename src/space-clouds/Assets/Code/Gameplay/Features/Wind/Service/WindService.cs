@@ -1,41 +1,41 @@
+using Code.Gameplay.Features.Wind.Configs;
 using UnityEngine;
 
 namespace Code.Gameplay.Features.Wind.Service
 {
     public class WindService : IWindService
     {
-        private Vector2 _windDirection;
-
         private readonly WindConfig _config;
+        private readonly GameContext _gameContext;
 
-        private float _timer;
-        private float _windForce;
-        private float _cloudSpeedMultiplier;
+        public float BaseCloudSpeed =>
+            _config.BaseCloudSpeed;
 
-        public Vector2 WindDirection => _windDirection;
-        public float WindForce => _windForce;
-        public float BaseCloudSpeed => _config.BaseCloudSpeed;
-        public float CloudSpeedMultiplier => _cloudSpeedMultiplier;
-
-        public WindService(WindConfig config)
+        public WindService(GameContext game, WindConfig config)
         {
+            _gameContext = game;
             _config = config;
-            SwitchWind();
         }
 
-        public void Update(float deltaTime)
+        public Vector2 GetWindDirection()
         {
-            _timer -= deltaTime;
-            if (_timer <= 0)
-                SwitchWind();
+            var wind = GetWindEntity();
+            return wind != null ? wind.WindDirection : Vector2.right;
         }
 
-        private void SwitchWind()
+        public float GetWindForce()
         {
-            _windForce  = Random.Range(_config.MinWindForce, _config.MaxWindForce);
-            _windDirection  = Random.value > 0.5f ? Vector2.right : Vector2.left;
-            _timer = Random.Range(_config.MinWindDuration, _config.MaxWindDuration);
-            _cloudSpeedMultiplier = Random.Range(_config.MinCloudSpeedMultiplier, _config.MaxCloudSpeedMultiplier);
+            var wind = GetWindEntity();
+            return wind != null ? wind.WindForce : 1f;
         }
+
+        public float GetSpeedMultiplier()
+        {
+            var wind = GetWindEntity();
+            return wind != null ? wind.WindSpeedMultiplier : 1f;
+        }
+
+        private GameEntity GetWindEntity() =>
+            _gameContext.GetGroup(GameMatcher.WindEntity).GetSingleEntity();
     }
 }

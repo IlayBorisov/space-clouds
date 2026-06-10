@@ -9,7 +9,7 @@ namespace Code.Gameplay.Features.Input.Service
         protected const string Vertical = "Vertical";
 
         public abstract Vector2 Axis { get; }
-        public virtual  bool HasAxis => Axis != Vector2.zero;
+        public virtual bool HasAxis => Axis != Vector2.zero;
 
         protected static Vector2 SimpleInputAxis() => 
             new(SimpleInput.GetAxis(Horizontal), SimpleInput.GetAxis(Vertical));

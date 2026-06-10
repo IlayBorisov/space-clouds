@@ -1,37 +1,37 @@
 ﻿using System;
-using UnityEngine;
 using System.Collections;
 using Code.Infrastructure.Runner;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using Zenject;
 
 namespace Code.Infrastructure.Scenes
 {
-    public class SceneLoader : ISceneLoader
+    public class SceneLoader
     {
         private readonly ICoroutineRunner _coroutineRunner;
 
-        public SceneLoader(ICoroutineRunner coroutineRunner)
-        {
+        [Inject]
+        public SceneLoader(ICoroutineRunner coroutineRunner) => 
             _coroutineRunner = coroutineRunner;
-        }
 
-        public void Load(string sceneName, Action onLoaded = null) =>
-            _coroutineRunner.StartCoroutine(LoadScene(sceneName, onLoaded));
+        public void Load(string name, Action onLoader = null) =>
+            _coroutineRunner.StartCoroutine(LoadScene(name, onLoader));
 
-        private IEnumerator LoadScene(string sceneName, Action onLoaded = null)
+        private IEnumerator LoadScene(string nextScene, Action onLoader = null)
         {
-            if (SceneManager.GetActiveScene().name == sceneName)
+            if (SceneManager.GetActiveScene().name == nextScene)
             {
-                onLoaded?.Invoke();
+                onLoader?.Invoke();
                 yield break;
             }
+            
+            AsyncOperation waitNextScene = SceneManager.LoadSceneAsync(nextScene);
 
-            AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName);
-
-            while (!asyncOperation.isDone)
+            while (!waitNextScene.isDone)
                 yield return null;
 
-            onLoaded?.Invoke();
+            onLoader?.Invoke();
         }
     }
 }

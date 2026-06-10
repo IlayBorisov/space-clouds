@@ -1,15 +1,15 @@
-﻿using Code.Common.Cameras;
-using Code.Gameplay.Features.Stars.Service;
-using Code.Gameplay.Features.Stars.Systems;
+﻿using Code.Gameplay.Features.Stars.Systems;
+using Code.Infrastructure.Systems;
 
 namespace Code.Gameplay.Features.Stars
 {
     public class StarFeature : Feature
     {
-        public StarFeature(GameContext gameContext, IStarSpawnService starSpawnService, ICameraProvider cameraProvider)
+        public StarFeature(ISystemsFactory systemsFactory)
         {
-            Add(new StarSystem(gameContext, starSpawnService, cameraProvider));
-            Add(new DestroyStarBelowScreenSystem(gameContext, cameraProvider));
+            Add(systemsFactory.Create<InitializeStarSpawnerSystem>());
+            Add(systemsFactory.Create<StarSystem>());
+            //Add(systemsFactory.Create<DestroyStarBelowScreenSystem>());
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Zenject;
+﻿using Code.Infrastructure.States.GameStates;
+using Zenject;
 
 namespace Code.Infrastructure.States.Factory
 {
@@ -11,6 +12,7 @@ namespace Code.Infrastructure.States.Factory
             _container = container;
         }
 
-        public TState GetState<TState>() where TState : IState => _container.Resolve<TState>();
+        public TState GetState<TState>() where TState : IState => 
+            _container.Resolve<TState>();
     }
 }

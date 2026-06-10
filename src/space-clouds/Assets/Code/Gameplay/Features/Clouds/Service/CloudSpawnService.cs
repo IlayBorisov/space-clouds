@@ -2,6 +2,7 @@
 using Code.Gameplay.Common.Entity;
 using Code.Gameplay.Common.Extensions;
 using Code.Gameplay.Common.Identifiers.Service;
+using Code.Gameplay.Features.Clouds.Configs;
 using Code.Infrastructure.AssetManagement;
 using UnityEngine;
 
@@ -12,12 +13,14 @@ namespace Code.Gameplay.Features.Clouds.Service
         private readonly IAssets _assets;
         private readonly IIdentifierService _identifiers;
         private readonly ICollisionRegistry _collisionRegistry;
+        private readonly CloudConfig _config;
 
-        public CloudSpawnService(IAssets assets, IIdentifierService identifiers, ICollisionRegistry collisionRegistry)
+        public CloudSpawnService(IAssets assets, IIdentifierService identifiers, ICollisionRegistry collisionRegistry, CloudConfig config)
         {
             _assets = assets;
             _identifiers = identifiers;
             _collisionRegistry = collisionRegistry;
+            _config = config;
         }
 
         public void SpawnCloud(Vector2 at)
@@ -32,7 +35,7 @@ namespace Code.Gameplay.Features.Clouds.Service
                 .AddTransform(cloud.transform)
                 .AddWorldPosition(at)
                 .AddDirection(Vector2.down)
-                .AddSpeed(2f)
+                .AddSpeed(_config.Speed)
                 .With(x => x.isCloud = true)
                 .With(x => x.isMoving = true)
                 .With(x => x.isDestroyedBelowScreen = true)
